@@ -6,16 +6,24 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- ✅ Spring Boot Parent (VERY IMPORTANT) -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.0</version>
+        <relativePath/>
+    </parent>
+
     <groupId>com.project11</groupId>
     <artifactId>project11-app</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>Project11 Spring Boot App</name>
+    <description>Spring Boot app for Project 11</description>
 
     <properties>
         <java.version>17</java.version>
-        <spring.boot.version>3.2.0</spring.boot.version>
     </properties>
 
     <dependencies>
@@ -25,7 +33,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Actuator (optional but good for monitoring) -->
+        <!-- Actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -34,7 +42,7 @@
 
     <build>
         <plugins>
-            <!-- Spring Boot Plugin -->
+            <!-- Spring Boot Maven Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
