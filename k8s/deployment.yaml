@@ -15,5 +15,6 @@ spec:
       containers:
       - name: project11
         image: 945714903325.dkr.ecr.us-east-1.amazonaws.com/project11-app:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
