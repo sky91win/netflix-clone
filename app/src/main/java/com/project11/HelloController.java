@@ -8,7 +8,7 @@ public class HelloController {
 
     @GetMapping("/")
     public String home() {
-        return "🚀 Project 11 running successfully on AWS EKS via GitHub Actions!";
+        return "Project 11 running via GitHub Actions + ArgoCD!";
     }
 
     @GetMapping("/health")
