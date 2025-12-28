@@ -7,13 +7,12 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/backend-protocol: HTTP
     alb.ingress.kubernetes.io/healthcheck-path: /
-    alb.ingress.kubernetes.io/healthcheck-port: traffic-port
-    alb.ingress.kubernetes.io/success-codes: "200"
 spec:
   ingressClassName: alb
   rules:
   - http:
       paths:
+      # FRONTEND
       - path: /
         pathType: Prefix
         backend:
@@ -21,3 +20,12 @@ spec:
             name: netflix-svc
             port:
               number: 80
+
+      # BACKEND
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: netflix-backend
+            port:
+              number: 5000
